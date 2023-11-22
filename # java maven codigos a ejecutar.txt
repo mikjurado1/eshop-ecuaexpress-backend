@@ -1,0 +1,53 @@
+# java maven codigos a ejecutar
+mvn -v (verificar instalacion de maven)
+
+cd D:\java\hola-mundo\hola-mundo
+mvn spring-boot:run
+Tomcat started on port(s): 8080 (http) with context path ''
+localhost:8080
+
+#antes de subir a Heroku
+mvn package
+
+#Docker 
+
+Ubicarte en donde esta el archivo pom.xml
+Elimina target: mvn clean package (elimina y vuelve a crear target)
+Crea target: mvn package
+
+Nombre del container:
+docker ps
+docker ps -a
+docker rm nombre-o-id-del-contenedor
+Ejemplo: docker rm vibrant_dijkstra
+Ejemplo: docker rm vibrant_dijkstra elegant_cartwright awesome_northcutt hardcore_newton
+
+Ver images creadas:
+docker images
+Eliminar images:
+docker rmi 0058f4b53699
+docker rmi myorg/myapp:latest
+docker rmi id-de-la-imagen
+docker rmi nombre-de-la-imagen:tag
+
+
+docker stop myorg/myapp
+docker rm myorg/myapp
+docker build -t mikjurado/guitar-shop . (punto al final)
+
+docker run -d --name guitar-shop -p 8081:8080 myorg/myapp
+docker run -d --name backend-guitar-shop -p 8081:8080 mikjurado/guitar-shop
+
+### FRONTEND Angular
+ng build
+docker build -t frontend-guitar-shop .
+docker ps -a
+docker run -p 8081:80 nombre-de-tu-imagen-angular
+docker run -d --name frontguitar-shop -p 8100:8080 frontend-guitar-shop
+fly launch
+
+
+
+
+
+
